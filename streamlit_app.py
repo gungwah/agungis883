@@ -1,10 +1,11 @@
 import streamlit as st
 from openai import OpenAI
-from google.colab import userdata
 import os
 
+BUID = 15387312
+
 ### Load your API Key
-my_secret_key = userdata.get('MyOpenAIKey')
+my_secret_key = st.secrets['MyOpenAIKey']
 os.environ["OPENAI_API_KEY"] = my_secret_key
 
 
@@ -23,5 +24,5 @@ response = client.chat.completions.create(
 
 ### Print all 10 completions:
 for i in range(10):
-  print(response.choices[i].message.content)
+  st.write(response.choices[i].message.content)
 
