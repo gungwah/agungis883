@@ -15,7 +15,7 @@ response = client.chat.completions.create(
   model="gpt-4o-mini",
   messages=[
     {"role": "system", "content": "Complete the following prefix"},
-    {"role": "user", "content": "Damascus is a"}
+    {"role": "user", "content": "bali is a"}
   ],
   seed = BUID,
   n=10,
