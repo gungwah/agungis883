@@ -22,7 +22,21 @@ response = client.chat.completions.create(
   max_tokens=20
 )
 
+java_response = client.chat.completions.create(
+  model="gpt-4o-mini",
+  messages=[
+    {"role": "system", "content": "Complete the following prefix"},
+    {"role": "user", "content": "java is a"}
+  ],
+  seed = BUID,
+  n=10,
+  max_tokens=20
+)
+
 ### Print all 10 completions:
 for i in range(10):
   st.write(response.choices[i].message.content)
+
+for i in range(10):
+  st.write(java_response.choices[i].message.content)
 
